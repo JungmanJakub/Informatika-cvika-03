@@ -1,6 +1,5 @@
-streamlit
-numpy
-matplotlib
-pandas
-reportlab
-pillow
+Phyton (programovací jazyk)
+Streamlit (web aplikace)
+NumPy (výpočty)
+Matplotlib (vykreslení grafu)
+ReportLab (generování PDF)
