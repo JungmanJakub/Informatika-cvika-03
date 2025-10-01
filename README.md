@@ -1,5 +1,7 @@
 # Body na kružnici — Streamlit aplikace
 
+https://informatika-cvika-03-jungman.streamlit.app   (Odkaz na aplikaci)
+
 Tato aplikace byla vytvořena jako školní úloha z informatiky. Umožňuje zadat parametry kružnice a vykreslit rovnoměrně rozmístěné body. Součástí je i export výsledků do PDF a tabulka souřadnic.
 
 ## Funkce aplikace
