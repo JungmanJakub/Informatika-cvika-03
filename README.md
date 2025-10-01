@@ -24,7 +24,6 @@ Tato aplikace byla vytvořena jako školní úloha z informatiky. Umožňuje zad
 
 ## Spuštění lokálně
 
-1. Naklonujte repozitář:
-```bash
-git clone https://github.com/<tvuj-username>/<nazev-repa>.git
-cd <nazev-repa>
+Naklonujte repozitář:
+git clone https://github.com/<JungmanJakub>/<Informatika-cvika-03>.git
+cd <Informatika-cvika-03>
