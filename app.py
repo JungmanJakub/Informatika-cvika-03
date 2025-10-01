@@ -8,9 +8,9 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 
 # ===============================
-# Registrace fontu Times New Roman
+# Registrace fontu DejaVu Sans
 # ===============================
-pdfmetrics.registerFont(TTFont('TimesNewRoman', 'Times New Roman.ttf'))
+pdfmetrics.registerFont(TTFont('DejaVu', 'DejaVuSans.ttf'))
 
 # ===============================
 # TITULEK A POPIS
@@ -76,11 +76,11 @@ def create_pdf():
     c = canvas.Canvas(buffer, pagesize=A4)
     width, height = A4
 
-    # použití Times New Roman
-    c.setFont("TimesNewRoman", 14)
+    # Použití DejaVu Sans pro češtinu
+    c.setFont("DejaVu", 14)
     c.drawString(50, height - 50, "Výsledky - Body na kružnici")
 
-    c.setFont("TimesNewRoman", 12)
+    c.setFont("DejaVu", 12)
     c.drawString(50, height - 100, f"Střed kružnice: ({x_center}, {y_center})")
     c.drawString(50, height - 120, f"Poloměr: {radius} {unit}")
     c.drawString(50, height - 140, f"Počet bodů: {num_points}")
@@ -95,7 +95,7 @@ def create_pdf():
         y_pos -= 20
         if y_pos < 50:  # nová strana
             c.showPage()
-            c.setFont("TimesNewRoman", 12)
+            c.setFont("DejaVu", 12)
             y_pos = height - 50
 
     c.save()
