@@ -4,6 +4,13 @@ import matplotlib.pyplot as plt
 from io import BytesIO
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
+
+# ===============================
+# Registrace fontu Times New Roman
+# ===============================
+pdfmetrics.registerFont(TTFont('TimesNewRoman', 'Times New Roman.ttf'))
 
 # ===============================
 # TITULEK A POPIS
@@ -69,16 +76,17 @@ def create_pdf():
     c = canvas.Canvas(buffer, pagesize=A4)
     width, height = A4
 
-    c.setFont("Helvetica", 14)
+    # použití Times New Roman
+    c.setFont("TimesNewRoman", 14)
     c.drawString(50, height - 50, "Výsledky - Body na kružnici")
 
-    c.setFont("Helvetica", 12)
+    c.setFont("TimesNewRoman", 12)
     c.drawString(50, height - 100, f"Střed kružnice: ({x_center}, {y_center})")
     c.drawString(50, height - 120, f"Poloměr: {radius} {unit}")
     c.drawString(50, height - 140, f"Počet bodů: {num_points}")
     c.drawString(50, height - 160, f"Barva bodů: {color}")
-    c.drawString(50, height - 180, f"Autor: Jakub Jungman")
-    c.drawString(50, height - 200, f"Kontakt: 277941@vutbr.cz")
+    c.drawString(50, height - 180, "Autor: Jakub Jungman")
+    c.drawString(50, height - 200, "Kontakt: 277941@vutbr.cz")
 
     c.drawString(50, height - 240, "Souřadnice bodů:")
     y_pos = height - 260
@@ -87,6 +95,7 @@ def create_pdf():
         y_pos -= 20
         if y_pos < 50:  # nová strana
             c.showPage()
+            c.setFont("TimesNewRoman", 12)
             y_pos = height - 50
 
     c.save()
