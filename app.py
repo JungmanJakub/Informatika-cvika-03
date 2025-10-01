@@ -62,10 +62,10 @@ st.subheader("Bodový graf")
 st.pyplot(fig)
 
 # ===============================
-# TABULKA SOUŘADNIC
+# TABULKA SOUŘADNIC (s čísly bodů 1-n)
 # ===============================
 st.subheader("Souřadnice bodů")
-data = {"X": np.round(x_points, 2), "Y": np.round(y_points, 2)}
+data = {"Bod": list(range(1, num_points+1)), "X": np.round(x_points, 2), "Y": np.round(y_points, 2)}
 st.table(data)
 
 # ===============================
