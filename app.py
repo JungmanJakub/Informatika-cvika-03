@@ -32,10 +32,6 @@ color = st.sidebar.color_picker("Vyber barvu bodů", "#ff0000")
 # Jednotka na osách
 unit = st.sidebar.text_input("Jednotka os", "m")
 
-# Autor a kontakt
-author = st.sidebar.text_input("Autor (jméno)", "")
-contact = st.sidebar.text_input("Kontakt (email/Teams)", "")
-
 # ===============================
 # VÝPOČET SOUŘADNIC BODŮ
 # ===============================
@@ -54,6 +50,8 @@ ax.set_xlabel(f"X [{unit}]")
 ax.set_ylabel(f"Y [{unit}]")
 ax.grid(True)
 ax.legend()
+
+st.subheader("Bodový graf")
 st.pyplot(fig)
 
 # ===============================
@@ -79,8 +77,8 @@ def create_pdf():
     c.drawString(50, height - 120, f"Poloměr: {radius} {unit}")
     c.drawString(50, height - 140, f"Počet bodů: {num_points}")
     c.drawString(50, height - 160, f"Barva bodů: {color}")
-    c.drawString(50, height - 180, f"Autor: {author}")
-    c.drawString(50, height - 200, f"Kontakt: {contact}")
+    c.drawString(50, height - 180, f"Autor: Jakub Jungman")
+    c.drawString(50, height - 200, f"Kontakt: 277941@vutbr.cz")
 
     c.drawString(50, height - 240, "Souřadnice bodů:")
     y_pos = height - 260
@@ -110,3 +108,10 @@ with st.expander("ℹ️ Použité technologie"):
     - **Matplotlib** (vykreslení grafu)
     - **ReportLab** (generování PDF)
     """)
+
+# ===============================
+# INFORMACE O AUTOROVI
+# ===============================
+st.subheader("Informace o autorovi")
+st.write("**Jméno:** Jakub Jungman") 
+st.write("**Kontakt:** 277941@vutbr.cz")
