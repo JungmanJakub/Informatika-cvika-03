@@ -1,5 +1,4 @@
-Phyton (programovací jazyk)
-Streamlit (web aplikace)
-NumPy (výpočty)
-Matplotlib (vykreslení grafu)
-ReportLab (generování PDF)
+streamlit
+numpy
+matplotlib
+reportlab
